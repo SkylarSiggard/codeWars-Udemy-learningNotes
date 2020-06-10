@@ -35,7 +35,7 @@ lesser_of_two_evens2(2,5)
 #animal_crackers('Crazy Kangaroo') --> False
 #! My Answers
 def animal_crackers(text):
-    t = text.split()
+    t = text.lower().split()
     if t[0][0] == t[1][0]:
         print(True)
     else:
@@ -175,8 +175,8 @@ def has_332(nums):
     
     return False
 has_33([1, 3, 3])
-has_332([1, 3, 1, 3])
-has_33([3, 1, 3])
+has_33([1, 3, 1, 3])
+has_332([3, 1, 3])
 
 #PAPER DOLL: Given a string, return a string where for every character in the original there are three characters¶
 #paper_doll('Hello') --> 'HHHeeellllllooo'
@@ -340,6 +340,7 @@ def count_primes2(num):
             x += 2
     print(primes)
     return len(primes)
+
 #* and another way of doing it:
 def count_primes3(num):
     primes = [2]
