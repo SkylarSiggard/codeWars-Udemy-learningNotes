@@ -18,15 +18,17 @@ def lesser_of_two_evens(a,b):
             print("numbers are mixed but {} is greater".format(a))
         else:
             print("numbers are mixed but {} is greater".format(b))   
-lesser_of_two_evens(2,4)
-lesser_of_two_evens(2,5)
+
 
 #* their answers:
-def lesser_of_two_evens(a,b):
+def lesser_of_two_evens2(a,b):
     if a%2 == 0 and b%2 == 0:
         return min(a,b)
     else:
         return max(a,b)
+    
+lesser_of_two_evens(2,4)
+lesser_of_two_evens2(2,5)
 
 #ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter¶
 #animal_crackers('Levelheaded Llama') --> True
@@ -38,13 +40,15 @@ def animal_crackers(text):
         print(True)
     else:
         print(False)
-animal_crackers('Levelheaded Llama')
-animal_crackers('Crazy Kangaroo')
+
 
 #* their answers:
-def animal_crackers(text):
+def animal_crackers2(text):
     wordlist = text.split()
     return wordlist[0][0] == wordlist[1][0]
+
+animal_crackers('Levelheaded Llama')
+animal_crackers2('Crazy Kangaroo')
 
 #MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False¶
 #makes_twenty(20,10) --> True
@@ -60,12 +64,14 @@ def makes_twenty(n1,n2):
             print(True, 'second')
         else:
             print(False, 'third')
-makes_twenty(20,10)
-makes_twenty(2,3)
+
 
 #* their answers:
-def makes_twenty(n1,n2):
+def makes_twenty2(n1,n2):
     return (n1+n2)==20 or n1==20 or n2==20
+
+makes_twenty(20,10)
+makes_twenty2(2,3)
 
 #OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name¶
 #old_macdonald('macdonald') --> MacDonald
@@ -85,7 +91,7 @@ def old_macdonald(name):
     print(''.join(mystring))
     
 #* their answers:
-def old_macdonald(name):
+def old_macdonald2(name):
     if len(name) > 3:
         return name[:3].capitalize() + name[3:].capitalize()
     else:
@@ -108,12 +114,14 @@ def master_yoda(text):
     t = text.split()
     r = t[::-1]
     print(' '.join(r))
-master_yoda('I am home')
-master_yoda('We are ready')
+
 
 #* their answers:
-def master_yoda(text):
+def master_yoda2(text):
     return ' '.join(text.split()[::-1])
+
+master_yoda('I am home')
+master_yoda2('We are ready')
 
 #ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200¶
 #almost_there(90) --> True
@@ -127,13 +135,15 @@ def almost_there(n):
         print(True)
     else:
         print(False)
-almost_there(104)
-almost_there(150)
-almost_there(209)
+
 
 #* their answers:
-def almost_there(n):
+def almost_there2(n):
     return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10))
+
+almost_there(104)
+almost_there2(150)
+almost_there(209)
 
 #FIND 33:¶
 #Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
@@ -152,12 +162,10 @@ def has_33(nums):
             else:
                 print(False)
         index += 1
-has_33([1, 3, 3])
-has_33([1, 3, 1, 3])
-has_33([3, 1, 3])
+
 
 #* their answers:
-def has_33(nums):
+def has_332(nums):
     for i in range(0, len(nums)-1):
         # nicer looking alternative in commented code
         #if nums[i] == 3 and nums[i+1] == 3:
@@ -166,6 +174,9 @@ def has_33(nums):
             return True  
     
     return False
+has_33([1, 3, 3])
+has_332([1, 3, 1, 3])
+has_33([3, 1, 3])
 
 #PAPER DOLL: Given a string, return a string where for every character in the original there are three characters¶
 #paper_doll('Hello') --> 'HHHeeellllllooo'
@@ -177,15 +188,16 @@ def paper_doll(text):
     for i in t:
         newStr.append(i * 3)
     print(''.join(newStr))
-paper_doll('Hello')
-paper_doll('Mississippi')
+
 
 #* their answers:
-def paper_doll(text):
+def paper_doll2(text):
     result = ''
     for char in text:
         result += char * 3
     return result
+paper_doll('Hello')
+paper_doll2('Mississippi')
 
 #BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'¶
 #blackjack(5,6,7) --> 18
@@ -205,19 +217,19 @@ def blackjack(a,b,c):
                 print("the sum is:", newSum)
         else:
             print("BUST")
-blackjack(5,6,7)
-blackjack(9,9,9)
-blackjack(9,9,11)
+
 
 #* their answers:
-def blackjack(a,b,c):
-    
+def blackjack2(a,b,c):
     if sum((a,b,c)) <= 21:
         return sum((a,b,c))
     elif sum((a,b,c)) <=31 and 11 in (a,b,c):
         return sum((a,b,c)) - 10
     else:
         return 'BUST'
+blackjack(5,6,7)
+blackjack2(9,9,9)
+blackjack(9,9,11)
 
 #SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.¶
 #summer_69([1, 3, 5]) --> 9
@@ -238,12 +250,10 @@ def summer_69(arr):
             else: 
                 pass
     print(sum(numSum))
-summer_69([1, 3, 5])
-summer_69([4, 5, 6, 7, 8, 9])
-summer_69([2, 1, 6, 9, 11])
+
 
 #* their answers:
-def summer_69(arr):
+def summer_692(arr):
     total = 0
     add = True
     for num in arr:
@@ -260,6 +270,9 @@ def summer_69(arr):
                 add = True
                 break
     return total
+summer_69([1, 3, 5])
+summer_692([4, 5, 6, 7, 8, 9])
+summer_69([2, 1, 6, 9, 11])
 
 
 #SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order¶
@@ -282,11 +295,10 @@ def spy_game(nums):
         if index > len(nums):
             index = 0
     print(jamesBond)
-spy_game([1,2,4,0,0,7,5])
-spy_game([1,0,2,4,0,5,7])
+
 
 #* their answers:
-def spy_game(nums):
+def spy_game2(nums):
 
     code = [0,0,7,'x']
     
@@ -294,6 +306,9 @@ def spy_game(nums):
         if num == code[0]:
             code.pop(0)   # code.remove(num) also works
     return len(code) == 1
+
+spy_game([1,2,4,0,0,7,5])
+spy_game2([1,0,2,4,0,5,7])
 
 #COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number¶
 #count_primes(100) --> 25
@@ -307,10 +322,10 @@ def count_primes(num):
         else:
             pass
     print(len(count))
-count_primes(100)
+
 
 #* their answers:
-def count_primes(num):
+def count_primes2(num):
     primes = [2]
     x = 3
     if num < 2:  # for the case of num = 0 or 1
@@ -326,7 +341,7 @@ def count_primes(num):
     print(primes)
     return len(primes)
 #* and another way of doing it:
-def count_primes2(num):
+def count_primes3(num):
     primes = [2]
     x = 3
     if num < 2:
@@ -341,6 +356,10 @@ def count_primes2(num):
             x += 2
     print(primes)
     return len(primes)
+
+count_primes(100)
+count_primes2(100)
+count_primes3(100)
 
 
 #Just for fun:¶
@@ -360,12 +379,15 @@ def print_big(letter):
     for i in alf:
         if i == letter.lower():
             print('{a}\n{b}\n{c}\n{d}\n{e}'.format(a=alf[letter][0],b=alf[letter][1],c=alf[letter][2],d=alf[letter][3],e=alf[letter][4]))
-print_big('b')
 
 #* their answers:
-def print_big(letter):
+def print_big2(letter):
     patterns = {1:'  *  ',2:' * * ',3:'*   *',4:'*****',5:'**** ',6:'   * ',7:' *   ',8:'*   * ',9:'*    '}
     alphabet = {'A':[1,2,4,3,3],'B':[5,3,5,3,5],'C':[4,9,9,9,4],'D':[5,3,3,3,5],'E':[4,9,4,9,4]}
     for pattern in alphabet[letter.upper()]:
         print(patterns[pattern])
+
+print_big('b')
+print_big2('b')
+
 
