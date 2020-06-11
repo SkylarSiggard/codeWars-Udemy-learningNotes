@@ -6,7 +6,6 @@ def vol(rad):
 vol(2)
 
 
-
 #Write a function that checks whether a number is in a given range (inclusive of high and low)
 #!mine
 def ran_check(num,low,high):
@@ -28,16 +27,15 @@ ran_bool(3,1,10)
 #If you feel ambitious, explore the Collections module to solve this problem!
 #!mine:
 def up_low(s):
-    upper = 0
-    lower = 0
+    d = {'upper':0,'lower':0}
     for i in s:
         if i.isupper():
-            upper += 1
+            d['upper'] += 1
         elif i.islower():
-            lower += 1
+            d['lower'] += 1
         else:
             pass
-    print(f'No. of Upper case characters: {upper}\nNo . of Lower case characters: {lower}')
+    print(f'No. of Upper case characters: {d["upper"]}\nNo . of Lower case characters: {d["lower"]}')
 s = 'Hello Mr. Rogers, how are you this fine Tuesday?'
 up_low(s)
 
@@ -47,24 +45,39 @@ up_low(s)
 #!mine:
 def unique_list(lst):
     return [i for i in set(lst)]
+
+#* Thier way 
+def unique_list1(lst):
+    return list(set(lst))
+
+#* another but not a fan of this way anymore 
+def unique_list2(lst):
+    seen_numbers = []
+    for number in lst:
+        if number not in seen_numbers:
+            seen_numbers.append(number)
+    return seen_numbers
 unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+unique_list1([1,1,1,1,2,2,3,3,3,3,4,5])
+unique_list2([1,1,1,1,2,2,3,3,3,3,4,5])
 
 #Write a Python function to multiply all the numbers in a list.
 #Sample List : [1, 2, 3, -4]
 #Expected Output : -24
 #!mine
 def multiply(numbers):  
-    new = 1 
+    total = 1 
     for i in numbers:
-        new = i * new
-    return new
+        total = i * total
+    return total
 multiply([1,2,3,-4])
 
 #Write a Python function that checks whether a passed in string is palindrome or not.
 #Note: A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run.
 #!mine:
 def palindrome(s):
-    return s == s[::-1]
+    d = s.replace(" ",'')
+    return d == d[::-1]
 palindrome('elleh')
 
 #Hard:
@@ -85,4 +98,14 @@ def ispangram(str1, alphabet=string.ascii_lowercase):
                     print("tried removed same letter")
     return len(abc) == 0
 ispangram("The quick brown fox jumps over the lazy dog")
+
+#* theirs 
+import string
+def ispangram1(str1, alphabet=string.ascii_lowercase):
+    alphabet = set(alphabet)
+    str1 = str1.replace(' ','')
+    str1 = str1.lower()
+    str1 = set(str1)
+    return str1 == alphabet
+ispangram1("The quick brown fox jumps over the lazy dog")
 

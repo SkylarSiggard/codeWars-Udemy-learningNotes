@@ -28,7 +28,7 @@ if my_dates["our_month"] == my_events["chirstmas"][0] and my_dates["day_now"] ==
 else:
 	if int(my_dates["total_day_number"]) > 358:
 		days_til_c = 365 % int(my_dates["total_day_number"]) + 7
-		days_til_chirstmas = "Christmas is " + str(days_til_a) + " days away."
+		days_til_chirstmas = "Christmas is " + str(days_til_c) + " days away."
 	else:
 		days_til_c = 358 - int(my_dates["total_day_number"])
 		days_til_chirstmas = "Christmas is " + str(days_til_c) + " days away."
@@ -39,11 +39,11 @@ elif int(my_dates["our_month"]) > 2 and int(my_dates["our_month"]) < 4:
 	days_til_anniversary = "Our Anniversary is coming up! Dont mess it up!"
 else:
 	if int(my_dates["total_day_number"]) > 96:
-		 days_til_a = 365 % int(my_dates["total_day_number"]) + 96
-		 days_til_anniversary = "Our Anniversary is " + str(days_til_a) + " days away."
+		days_til_a = 365 % int(my_dates["total_day_number"]) + 96
+		days_til_anniversary = "Our Anniversary is " + str(days_til_a) + " days away."
 	else:
 		days_til_a = 96 - int(my_dates["total_day_number"])
 		days_til_anniversary = "Our Anniversary is " + str(days_til_a) + " days away."
 
-
-print('Today is {wd} the {dn}. The month is {m} and the year is {y}.{n}Chirstmas update: {c}{n}Anniversary update: {av}{n}I will be a father in {bu} days!{n}{du}!!!' .format(n = "\n", wd = my_dates['our_weekday'], dn = my_dates['day_now'], m = my_dates['month_spelled_out'], y = my_dates['year_now'], c = days_til_chirstmas, av = days_til_anniversary, bu = baby_update, du = dog_update2))
+print("this was before life sucked.")
+#print('Today is {wd} the {dn}. The month is {m} and the year is {y}.{n}Chirstmas update: {c}{n}Anniversary update: {av}{n}I will be a father in {bu} days!{n}{du}!!!' .format(n = "\n", wd = my_dates['our_weekday'], dn = my_dates['day_now'], m = my_dates['month_spelled_out'], y = my_dates['year_now'], c = days_til_chirstmas, av = days_til_anniversary, bu = baby_update, du = dog_update2))
