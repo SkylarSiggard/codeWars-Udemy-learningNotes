@@ -11,3 +11,4 @@ def myfunc(st):
     return ''.join(mystring)
 
 myfunc("hahahah")
+
