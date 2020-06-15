@@ -1,3 +1,4 @@
+# to turn a word into a hash tag. 
 def generate_hashtag(s):
     if len(s) == 0 or s == '#':
         return False
