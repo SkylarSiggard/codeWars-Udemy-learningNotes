@@ -1,3 +1,4 @@
+import random 
 #! welcomes the player to the game and allows them to see what game it is. 
 def intro():
 	print("Welcome to Tic Tak Toe!!!")
@@ -15,10 +16,11 @@ def player_select():
 		choice = input("Please pick X or O. ").upper()
 		if choice not in ["X","O"]:
 			print("Sorry, I dont understand, Please pick X or O")
-	if choice == "X":
-		return choice
-	elif choice == "O":
-		return choice
+	flip = random.randint(0,1)
+	if flip == 0:
+		return "O"
+	elif flip == 1:
+		return "X"
 	else: 
 		print("something went wront be careful")
 #! This is the game logic and will track whose turn it is and their move
