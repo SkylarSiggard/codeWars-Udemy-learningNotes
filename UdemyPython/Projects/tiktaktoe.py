@@ -45,6 +45,7 @@ def player_move(gameboard, player):
 		return board,who 
 #! this tracks the progress and checks if the game is still going. 		
 def player_progress(board, player):
+	used_spots = 0
 	if board[1] == player and board[2] == player and board[3] == player: 
 		print(f"Player {player} wins on row 1")
 		return False
@@ -61,8 +62,15 @@ def player_progress(board, player):
 		print(f"Player {player} wins on forward slash")
 		return False 
 	else:
-		print("Keep playing")
-		return True
+		for i in range(1,10):
+			if board[i] == "X" or board[i] == "O":
+				used_spots += 1
+			if used == 9:
+				print("The gameboard is full no winners")
+				return False
+			else: 
+				print("Keep playing")
+				return True
 #! will end the game or start again. 
 def play_again():
 	choice = "Wrong"
