@@ -34,7 +34,8 @@ def player_select():
 		print("something went wront") 
 		
 		
-#! whos turn and if anyone won or not
+#! whos turn and if anyone won or not. i wanted to play it save this time
+#! instead of just using X so i think this would finish better even tho its huge
 def winner(t,b,p):
 	if b[1] == "X" and b[2] == "X" and b[3] == "X": 
 		print(f"\n\n\nPlayer {p}: {t} wins on row 1")
@@ -77,7 +78,7 @@ def winner(t,b,p):
 			print("\n\n\nKeep playing")
 			return True
 			
-#! make a move 
+#! make a move and change the player and allow the other to go 
 def player_move(t,b,p):
 	print(f"Player {p}'s turn ")
 	game_on_bro = True
@@ -116,7 +117,7 @@ def play_again():
 		
 startGame = True
 while startGame:
-#! Global
+#! Global 
 	MakingTurns = True 
 	player1 = 0
 	player2 = 0
@@ -129,6 +130,7 @@ while startGame:
 	else:
 		player2 = 2
 #! Game
+#! i did the if break this time and it works so maybe that helps
 	while MakingTurns:
 		MakingTurns = winner(turn,gameBoard,who)
 		if MakingTurns == False:
