@@ -1,4 +1,4 @@
-#sort numbers
+#sort numbers and them filter them out 
 def remove_smallest(numbers):
     sortnum = numbers
     for num in sortnum:
