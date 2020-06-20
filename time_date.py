@@ -45,5 +45,5 @@ else:
 		days_til_a = 96 - int(my_dates["total_day_number"])
 		days_til_anniversary = "Our Anniversary is " + str(days_til_a) + " days away."
 
-print(f"this was before life sucked. but were still getting a dog in {dog_update}")
+print(f"this was before life sucked. but were still getting a dog in {dog_update} days!!")
 #print('Today is {wd} the {dn}. The month is {m} and the year is {y}.{n}Chirstmas update: {c}{n}Anniversary update: {av}{n}I will be a father in {bu} days!{n}{du}!!!' .format(n = "\n", wd = my_dates['our_weekday'], dn = my_dates['day_now'], m = my_dates['month_spelled_out'], y = my_dates['year_now'], c = days_til_chirstmas, av = days_til_anniversary, bu = baby_update, du = dog_update2))
