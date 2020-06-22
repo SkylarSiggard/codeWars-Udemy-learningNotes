@@ -54,3 +54,41 @@ class Circle():
         self.area = radius*radius*Circle.pi
     def get_circunference(self):
         return self.radius*Circle.pi*2
+    
+    
+#! Polymorphism 
+class PolyDog():
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        return self.name + " say woof!"
+#! Polymorphism 
+class PolyCat():
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        return self.name + " say meow!"
+niko = PolyDog("niko")
+felix = PolyCat("felix")
+print(niko.speak())
+
+#! for loop example 
+for pet  in [niko,felix]:
+    print(type(pet))
+    print(pet.speak())
+
+#! making a function examle: 
+def pet_speak(pet):
+    print(pet.speak())
+    
+#! good example of what you can do with it and first time seeing an raise error 
+class AnimalNew():
+    def __init__(self,name):
+        self.name = name
+    def speak(self):
+        raise NotImplementedError("Subclass must implement this adstract methond")
+    
+class PolyDogNew(AnimalNew):
+    def speak(self):
+        return self.name + " says woof !!!"
+    
