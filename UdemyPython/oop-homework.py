@@ -8,6 +8,8 @@ class Line:
     
     def distance(self):
         return math.sqrt((self.coor2[0]-self.coor1[0])**2+(self.coor2[1]-self.coor1[1])**2)
+        #! or if you didnt want to use math 
+        #* (self.coor2[0]-self.coor1[0])**2+(self.coor2[1]-self.coor1[1])**2)**0.5
     
     def slope(self):
         return (self.coor2[1]-self.coor1[1]) / (self.coor2[0]-self.coor1[0])
