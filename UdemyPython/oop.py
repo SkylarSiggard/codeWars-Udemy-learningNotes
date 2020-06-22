@@ -92,3 +92,29 @@ class PolyDogNew(AnimalNew):
     def speak(self):
         return self.name + " says woof !!!"
     
+#* *********************************************************************************************************************
+#! Special Methods (magic/Dunder)
+class Book():
+    def __init__(self,title,author,pages,):
+        self.title = title
+        self.author = author
+        self.pages = pages
+    #* this is used if you ever want to put something in print()
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+    #* this is used if you want to see the len() 
+    def __len__(self):
+        return self.pages
+    #* this will be used if someone used the del to delete soemthing 
+    def __del__(self):
+        print("A book object has been deleted")
+
+b = Book("Python","Jose",200)
+
+#! this wouldnt normal work without having the magic methonds in that Book class
+print(b)
+len(b)
+
+#! will delete the book or item from memory 
+del b 
+
