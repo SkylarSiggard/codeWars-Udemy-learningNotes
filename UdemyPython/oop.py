@@ -45,3 +45,12 @@ my_dog = DogExample2(breed="GoldenDoodle", name="Skilo", spots=False)
 my_dog.bark()
 #! Methods are different then the others because we have to invoke them with () 
 
+
+#* here is another example of a class: 
+class Circle():
+    pi = 3.14
+    def __init__(self,radius=1):
+        self.radius = radius 
+        self.area = redius*radius*Circle.pi
+    def get_circunference(self):
+        return self.radius*Circle.pi*2
