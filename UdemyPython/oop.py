@@ -22,7 +22,12 @@ class Dog():
 my_dog = Dog(breed="GoldenDoodle")
 print(my_dog.breed) #! output is "GoldenDoodle"
 
-class DogExample1():
+class DogExample2():
+    
+    # class object attrubute 
+    # same for any insteance of a class 
+    species = 'mammal'
+    
     
     def __init__(self,breed,name,spots):
         # attibutes 
@@ -32,5 +37,11 @@ class DogExample1():
         self.breed = breed 
         
         # expect boolean True/False 
-        self.name = spots
+        self.spots = spots 
+    # operation/ actions ---> Methods 
+    def bark(self):
+        print("WOOF! My name is {}".format(self.name))
+my_dog = DogExample2(breed="GoldenDoodle", name="Skilo", spots=False)
+my_dog.bark()
+#! Methods are different then the others because we have to invoke them with () 
 
