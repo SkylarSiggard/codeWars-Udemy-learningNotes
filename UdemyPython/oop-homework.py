@@ -7,6 +7,7 @@ class Line:
         self.coor2 = coor2 
     
     def distance(self):
+        #!!!!!!!!!!!!!!!!!!! i should have used tuple unpacking like this x1,y1 = self.coor1 
         return math.sqrt((self.coor2[0]-self.coor1[0])**2+(self.coor2[1]-self.coor1[1])**2)
         #! or if you didnt want to use math 
         #* (self.coor2[0]-self.coor1[0])**2+(self.coor2[1]-self.coor1[1])**2)**0.5
@@ -19,8 +20,8 @@ coordinate2 = (8,10)
 li = Line(coordinate1,coordinate2)
 li.distance()
 # out 9.433981132056603
-# out 1.6 
 li.slope()
+# out 1.6 
 
 #! find the volume and surface area 
 class Cylinder:
