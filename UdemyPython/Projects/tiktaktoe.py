@@ -1,3 +1,5 @@
+# tik tak toe came. this is my first try that didnt really work so i made a better one
+
 import random 
 #! welcomes the player to the game and allows them to see what game it is. 
 def intro():
