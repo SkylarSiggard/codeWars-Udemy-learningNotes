@@ -15,8 +15,10 @@ while startGame:
     intro()
     cards,dex = start(dex)
     botplayer = hits('bot',100,cards)
+    realplayer = hits('player',100,cards)
     #cardcount,dex = pickcard(dex)
     print(botplayer)
+    print(realplayer)
     break 
 
 #pot = botplayer.bet(20,pot)
