@@ -4,8 +4,6 @@ from colorama import Fore
 #? reminder how to do it :  print(Fore.RED + "some red text")
 
 # this is the game of blackjack. You will play against a bot. 
-cards = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
-pot = 0 
 #! this will handle the bets 
 class hits():
 
@@ -30,7 +28,8 @@ class hits():
     def __str__(self):
         return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}"
 
-
+cards = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
+pot = 0 
 
 
 botplayer = hits('bot',100)
