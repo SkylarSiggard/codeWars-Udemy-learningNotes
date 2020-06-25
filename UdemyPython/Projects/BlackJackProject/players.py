@@ -9,11 +9,10 @@ pot = 0
 #! this will handle the bets 
 class hits():
 
-    def __init__(self,player,funds,first,second):
+    def __init__(self,player,funds,cards):
         self.player = player
         self.funds = funds
-        self.first = first 
-        self.second = second
+        self.cards = cards 
 
     def bet(self,bet,pot):
         if self.funds == bet:
