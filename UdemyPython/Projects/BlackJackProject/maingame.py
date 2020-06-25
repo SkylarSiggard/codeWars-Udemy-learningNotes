@@ -12,10 +12,11 @@ startGame = True
 
 while startGame:
     dex = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
+    hand = {"hearts":[],"spades":[],"diamonds":[],"clubs":[]}
     intro()
-    cards,dex = start(dex)
-    botplayer = hits('bot',100,cards)
-    realplayer = hits('player',100,cards)
+    cards,dex = start(dex,hand)
+    botplayer = hits('bot',1000,cards)
+    realplayer = hits('player',1000,cards)
     #cardcount,dex = pickcard(dex)
     print(botplayer)
     print(realplayer)

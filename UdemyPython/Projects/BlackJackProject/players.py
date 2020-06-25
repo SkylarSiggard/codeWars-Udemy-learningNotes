@@ -29,5 +29,9 @@ class hits():
             return pot 
 
     def __str__(self):
-        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: "
+        if self.player == "bot":
+            thecards = self.cards
+        else:
+            thecards = self.cards
+        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: {thecards}\n"
 
