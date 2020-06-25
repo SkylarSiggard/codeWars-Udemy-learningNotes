@@ -3,7 +3,9 @@ init()
 from colorama import Fore
 import random
 #? reminder how to do it :  print(Fore.RED + "some red text")
-
+# global variables 
+pot = 0  
+dex = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
 # this is the game of blackjack. You will play against a bot. 
 #! this will handle the bets 
 class hits():
@@ -28,11 +30,35 @@ class hits():
             return pot 
 
     def __str__(self):
-        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}"
+        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: {self.cardcount}"
 
 
-botcard = 0
-playercard = 0 
+def start(dex):
+    s = random.randint(0,3)
+    if s == 0:
+        suit = "hearts"
+    elif s == 1:
+        suit = "spades"
+    elif s == 2:
+        suit = "diamonds"
+    else:
+        suit = "clubs"
+    number = random.randint(0,len(dex[suit]))
+    try:
+        first = dex[suit][number]
+        if suit == "hearts":
+            d = random.randint(0,len(dex["spades"]))
+            second = dex["spades"][d]
+            del dex["spades"][d]
+        else:
+            d = random.randint(0,len(dex["hearts"]))
+            second = dex["hearts"][d]
+        del dex[suit][number]
+        startingcard = first + second
+        return startingcard,dex
+    except:
+        print(Fore.RED + "Whoops Somthing went wront at the start")
+
 def pickcard(dex):
     s = random.randint(0,3)
     if s == 0:
@@ -49,13 +75,14 @@ def pickcard(dex):
         del dex[suit][number]
         return thecard, dex
     except:
-        print(Fore.RED + "Whoops Somthing went wront")
+        print(Fore.RED + "Whoops Somthing went wront while picking cards")
 
-dex = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
-pot = 0  
-pickcard(dex)
 
-#botplayer = hits('bot',100)
-#botplayer.bet(20,pot)
-#print(botplayer)
-#print(Fore.BLUE + "Total pot: "+str(pot))
+cardcount,dex = start(dex)
+botplayer = hits('bot',100,cardcount)
+cardcount,dex = pickcard(dex)
+
+
+pot = botplayer.bet(20,pot)
+print(botplayer)
+print(Fore.BLUE + "Total pot: "+str(pot))
