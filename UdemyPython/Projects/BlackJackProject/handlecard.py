@@ -18,7 +18,8 @@ def start(dex,cards):
     try:
         number = random.randint(0,len(dex[suit])-1)
         cards[suit].append(dex[suit][number])
-        cards["hearts"].append(dex["hearts"][number])
+        del dex[suit][number]
+        cards["hidden"].append(dex["hearts"][number])
         del dex[suit][number]
         return cards, dex
     except:
