@@ -1,7 +1,7 @@
 from colorama import init 
 init()
 from colorama import Fore
-import random
+from handlecard import start, pickcard
 #? reminder how to do it :  print(Fore.RED + "some red text")
 # global variables 
 pot = 0  
@@ -31,51 +31,6 @@ class hits():
 
     def __str__(self):
         return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: {self.cardcount}"
-
-
-def start(dex):
-    s = random.randint(0,3)
-    if s == 0:
-        suit = "hearts"
-    elif s == 1:
-        suit = "spades"
-    elif s == 2:
-        suit = "diamonds"
-    else:
-        suit = "clubs"
-    number = random.randint(0,len(dex[suit]))
-    try:
-        first = dex[suit][number]
-        if suit == "hearts":
-            d = random.randint(0,len(dex["spades"]))
-            second = dex["spades"][d]
-            del dex["spades"][d]
-        else:
-            d = random.randint(0,len(dex["hearts"]))
-            second = dex["hearts"][d]
-        del dex[suit][number]
-        startingcard = first + second
-        return startingcard,dex
-    except:
-        print(Fore.RED + "Whoops Somthing went wront at the start")
-
-def pickcard(dex):
-    s = random.randint(0,3)
-    if s == 0:
-        suit = "hearts"
-    elif s == 1:
-        suit = "spades"
-    elif s == 2:
-        suit = "diamonds"
-    else:
-        suit = "clubs"
-    number = random.randint(0,len(dex[suit]))
-    try:
-        thecard = dex[suit][number]
-        del dex[suit][number]
-        return thecard, dex
-    except:
-        print(Fore.RED + "Whoops Somthing went wront while picking cards")
 
 
 cardcount,dex = start(dex)
