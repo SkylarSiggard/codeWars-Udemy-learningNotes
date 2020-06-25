@@ -24,8 +24,7 @@ def start(dex):
             d = random.randint(0,len(dex["hearts"]))
             second = dex["hearts"][d]
         del dex[suit][number]
-        startingcard = first + second
-        return startingcard,dex
+        return first,second,dex
     except:
         print(Fore.RED + "Whoops Somthing went wront at the start")
 

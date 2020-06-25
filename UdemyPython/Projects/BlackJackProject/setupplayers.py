@@ -5,15 +5,15 @@ from handlecard import start, pickcard
 #? reminder how to do it :  print(Fore.RED + "some red text")
 # global variables 
 pot = 0  
-dex = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
 # this is the game of blackjack. You will play against a bot. 
 #! this will handle the bets 
 class hits():
 
-    def __init__(self,player,funds,cardcount):
+    def __init__(self,player,funds,first,second):
         self.player = player
         self.funds = funds
-        self.cardcount = cardcount
+        self.first = first 
+        self.second = second
 
     def bet(self,bet,pot):
         if self.funds == bet:
@@ -30,14 +30,5 @@ class hits():
             return pot 
 
     def __str__(self):
-        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: {self.cardcount}"
+        return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: "
 
-
-cardcount,dex = start(dex)
-botplayer = hits('bot',100,cardcount)
-cardcount,dex = pickcard(dex)
-
-
-pot = botplayer.bet(20,pot)
-print(botplayer)
-print(Fore.BLUE + "Total pot: "+str(pot))
