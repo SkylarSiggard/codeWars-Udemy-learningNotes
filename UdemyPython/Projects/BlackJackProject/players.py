@@ -21,7 +21,9 @@ class hits():
             return pot 
         elif self.funds < bet:
             print(Fore.RED + "Not enough funds")
-            return pot
+            if self.funds >= 1:
+                pot + 1
+                return pot
         else:
             self.funds = self.funds - bet 
             pot = bet + pot
