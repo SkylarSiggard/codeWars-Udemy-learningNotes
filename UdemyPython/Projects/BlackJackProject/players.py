@@ -30,8 +30,16 @@ class hits():
 
     def __str__(self):
         if self.player == "bot":
-            thecards = self.cards
+            val = self.cards.values()
+            num = 0
+            for i in val:
+                num = sum(i) + num
+            thecards = num - self.cards["hidden"][0]
         else:
-            thecards = self.cards
+            val = self.cards.values()
+            num = 0
+            for i in val:
+                num = sum(i) + num
+            thecards = num 
         return Fore.WHITE + f"Player: {self.player}\nPlayer funds: {self.funds}\nCard count: {thecards}\n"
 

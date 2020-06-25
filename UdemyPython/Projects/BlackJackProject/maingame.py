@@ -5,7 +5,7 @@ from handlecard import start, pickcard
 from players import hits
 
 def intro():
-    print(Fore.YELLOW + "\n\nWelcome to BlackJack!\n\n\n")
+    print(Fore.YELLOW + "\n\nWelcome to BlackJack!\n\n")
 
 startGame = True
 
