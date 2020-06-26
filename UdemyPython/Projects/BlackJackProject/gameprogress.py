@@ -19,32 +19,22 @@ def makebet():
 
 def winners(player,hand):
 	val = hand.values()
-	if player == "bot":
-        num = 0
-        for i in val:
-            num = sum(i) + num
+	num = 0 
+	for i in val:
+		num += sum(i)
+	if player == 'bot':
 		if num == 21:
-			message = "The Bot Wins!"
-			return False, message
+			return False, "Bot is the winner with 21!"
 		elif num > 21:
-			message = "The bot player is Bust"
-			return False, message
+			return False, "Bot is bust"
 		else:
-			message = "Still can play"
-			return True, message
-    else:
-        num = 0
-        for i in val:
-            num = sum(i) + num
+			return True, "Keep playing"
+	else:
 		if num == 21:
-			message = "The Player Wins!"
-			return False, message
+			return False, "Player is the winner with 21!"
 		elif num > 21:
-			message = "The player is Bust"
-			return False, message
+			return False, "Player is bust"
 		else:
-			message = "Still can play"
-			return True, message
+			return True, "Keep playing"
 
-hand = {"hearts":[5],"spades":[],"diamonds":[],"clubs":[],"hidden":[6]}
-winners('player',hand)
+
