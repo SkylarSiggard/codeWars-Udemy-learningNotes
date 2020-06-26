@@ -16,6 +16,18 @@ def makebet():
 			else:
 				return 1
 
+def fold():
+	choice = "Wrong"
+	while choice not in ['Y','N']:
+		choice = input("\nWould you like to hit or hold? (Y or N) \n").upper() 
+		if choice not in ['Y','N']:
+			print("Sorry, You need to type Y or N \n")	
+	if choice == "Y":
+		return True
+	else:
+		return False
+
+
 
 def winners(player,hand):
 	val = hand.values()

@@ -22,6 +22,13 @@ class Testgameplay(unittest.TestCase):
         result,message = gameprogress.winners('player',hand) 
         self.assertEqual(result, False)
 
+    def test_hold(self):
+        result = gameprogress.fold()
+        if result == False:
+            self.assertEqual(result,False)
+        else:
+            self.assertEqual(result,True)
+
 
 if __name__ == "__main__":
     unittest.main() 
