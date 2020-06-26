@@ -15,3 +15,36 @@ def makebet():
 				return int(howmuch)
 			else:
 				return 1
+
+
+def winners(player,hand):
+	val = hand.values()
+	if player == "bot":
+        num = 0
+        for i in val:
+            num = sum(i) + num
+		if num == 21:
+			message = "The Bot Wins!"
+			return False, message
+		elif num > 21:
+			message = "The bot player is Bust"
+			return False, message
+		else:
+			message = "Still can play"
+			return True, message
+    else:
+        num = 0
+        for i in val:
+            num = sum(i) + num
+		if num == 21:
+			message = "The Player Wins!"
+			return False, message
+		elif num > 21:
+			message = "The player is Bust"
+			return False, message
+		else:
+			message = "Still can play"
+			return True, message
+
+hand = {"hearts":[5],"spades":[],"diamonds":[],"clubs":[],"hidden":[6]}
+winners('player',hand)
