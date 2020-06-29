@@ -39,6 +39,6 @@ def pickcard(dex):
     try:
         thecard = dex[suit][number]
         del dex[suit][number]
-        return thecard, dex
+        return suit ,thecard, dex
     except:
         print(Fore.RED + "Whoops Somthing went wront while picking cards")

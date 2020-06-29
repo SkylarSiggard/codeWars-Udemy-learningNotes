@@ -9,10 +9,11 @@ pot = 0
 #! this will handle the bets 
 class hits():
 
-    def __init__(self,player,funds,cards):
+    def __init__(self,player,funds,cards,dex):
         self.player = player
         self.funds = funds
         self.cards = cards 
+        self.dex = dex 
 
     def bet(self,bet,pot):
         if self.funds == bet:
@@ -29,6 +30,10 @@ class hits():
             pot = bet + pot
             print(Fore.GREEN + f"You made a bet if {bet}. total pot is {pot}")
             return pot 
+
+    def handupdate(self,suit,card):
+        self.cards[suit].append(card)
+
 
     def __str__(self):
         if self.player == "bot":
