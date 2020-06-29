@@ -1,7 +1,7 @@
 from colorama import init 
 init()
 from colorama import Fore
-from handlecard import start, pickcard
+from handlecard import start1, start2, pickcard
 from players import hits 
 from gameprogress import makebet, fold, winners
 
@@ -17,12 +17,12 @@ while startGame:
     midgame = True 
     pot = 0
     intro()
-    cards,dex1 = start(dex,hand)
-    botplayer = hits('bot',10,cards,dex1)
-    cards,dex2 = start(dex,hand)
-    realplayer = hits('player',10,cards,dex2)
-    print(botplayer)
-    print(realplayer)
+    cards1,dex1 = start1(dex,hand)
+    botplayer = hits('bot',10,cards1,dex1)
+    cards2,dex2 = start2(dex,hand)
+    realplayer = hits('player',10,cards2,dex2)
+    print(botplayer,cards1)
+    print(realplayer,cards2)
     while midgame:
         thebet = makebet() 
         pot = hits.bet(realplayer,thebet, pot)

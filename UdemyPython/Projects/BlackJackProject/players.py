@@ -1,7 +1,7 @@
 from colorama import init 
 init()
 from colorama import Fore
-from handlecard import start, pickcard
+from handlecard import start1, start2, pickcard
 #? reminder how to do it :  print(Fore.RED + "some red text")
 # global variables 
 pot = 0  
