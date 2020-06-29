@@ -115,6 +115,7 @@ b = Book("Python","Jose",200)
 print(b)
 len(b)
 
+
 #! will delete the book or item from memory 
 del b 
 
