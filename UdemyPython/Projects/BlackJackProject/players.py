@@ -11,7 +11,7 @@ class hits():
         self.player = player
         self.funds = funds
         self.cards = cards 
-        self.dex = dex 
+        self.dex = dex
 
     def bet(self,bet,pot):
         if self.funds == bet:

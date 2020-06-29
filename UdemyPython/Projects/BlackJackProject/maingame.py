@@ -19,26 +19,28 @@ while startGame:
     intro()
     cards,dex = start(dex,hand)
     botplayer = hits('bot',10,cards,dex)
-    realplayer = hits('player',10,cards,dex)
+    realplayer = hits('player',20,cards,dex)
     print(botplayer,cards)
     print(realplayer,cards)
     while midgame:
         thebet = makebet() 
-        pot1 = hits.bet(realplayer,thebet,pot)
-        pot2 = hits.bet(botplayer,thebet,pot)
+        playerspot = hits.bet(realplayer,thebet,pot)
+        botpot = hits.bet(botplayer,thebet,pot)
+        pot = playerspot + botpot
         print(Fore.WHITE + ' ')
-        print(botplayer.cards)
-        print(realplayer.cards)
-        print(Fore.GREEN + f"Pot is: {pot1+pot2}")
+        print(botplayer)
+        print(realplayer)
+        print(Fore.GREEN + f"Pot is: {pot}")
         foldingcheck = fold()
         if foldingcheck == True:
             suit,thepic,dex = pickcard(dex)
             hits.handupdate(realplayer,suit,thepic)
             print(Fore.WHITE + ' ')
-            print(botplayer.cards)
-            print(realplayer.cards)
-        else:
+            print(botplayer)
+            print(realplayer)
+        else: 
             pass
-        break
+        midgame, message = winners(realplayer.cards)
+        print(message)
     break
 

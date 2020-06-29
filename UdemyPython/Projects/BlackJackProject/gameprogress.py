@@ -29,8 +29,8 @@ def fold():
 
 
 
-def winners(player,hand):
-	val = hand.values()
+def winners(player):
+	val = player.values()
 	num = 0 
 	for i in val:
 		num += sum(i)
