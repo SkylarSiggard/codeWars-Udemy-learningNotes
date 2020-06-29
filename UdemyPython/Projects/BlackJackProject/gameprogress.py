@@ -9,7 +9,7 @@ def makebet():
 		else:
 			if choice == 'Y':
 				while howmuch not in ['1','2','3','4','5','6','7','8','9','10']:
-					howmuch = input("\nMake a bet? \n")
+					howmuch = input("\nHow much will you bet? \n")
 					if howmuch not in ['1','2','3','4','5','6','7','8','9','10']:
 						print("Sorry, You need to bet at least $1 \n")
 				return int(howmuch)

@@ -1,9 +1,7 @@
 from colorama import init 
 init()
 from colorama import Fore
-from handlecard import start1, start2, pickcard
-#? reminder how to do it :  print(Fore.RED + "some red text")
-# global variables 
+
 pot = 0  
 # this is the game of blackjack. You will play against a bot. 
 #! this will handle the bets 

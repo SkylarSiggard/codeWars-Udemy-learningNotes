@@ -1,7 +1,7 @@
 from colorama import init 
 init()
 from colorama import Fore
-from handlecard import start1, start2, pickcard
+from handlecard import start, pickcard
 from players import hits 
 from gameprogress import makebet, fold, winners
 
@@ -17,24 +17,26 @@ while startGame:
     midgame = True 
     pot = 0
     intro()
-    cards1,dex1 = start1(dex,hand)
-    botplayer = hits('bot',10,cards1,dex1)
-    cards2,dex2 = start2(dex,hand)
-    realplayer = hits('player',10,cards2,dex2)
-    print(botplayer,cards1)
-    print(realplayer,cards2)
+    cards,dex = start(dex,hand)
+    botplayer = hits('bot',10,cards,dex)
+    realplayer = hits('player',10,cards,dex)
+    print(botplayer,cards)
+    print(realplayer,cards)
     while midgame:
         thebet = makebet() 
-        pot = hits.bet(realplayer,thebet, pot)
-        print(botplayer)
-        print(realplayer)
-        print(Fore.GREEN + f"Pot is: {pot}")
+        pot1 = hits.bet(realplayer,thebet,pot)
+        pot2 = hits.bet(botplayer,thebet,pot)
+        print(Fore.WHITE + ' ')
+        print(botplayer.cards)
+        print(realplayer.cards)
+        print(Fore.GREEN + f"Pot is: {pot1+pot2}")
         foldingcheck = fold()
         if foldingcheck == True:
-            suit,thepic,dex2 = pickcard(dex2)
+            suit,thepic,dex = pickcard(dex)
             hits.handupdate(realplayer,suit,thepic)
-            print(botplayer)
-            print(realplayer)
+            print(Fore.WHITE + ' ')
+            print(botplayer.cards)
+            print(realplayer.cards)
         else:
             pass
         break
