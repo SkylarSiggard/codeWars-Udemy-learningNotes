@@ -27,6 +27,19 @@ def fold():
 	else:
 		return False
 
+def wincheck(player1,player2):
+	val1 = player1.values()
+	val2 = player2.values()
+	num1 = 0 
+	num2 = 0 
+	for i in val1:
+		num1 += sum(i)
+	for i in val2:
+		num2 += sum(i)
+	if num1 > num2:
+		return "Bot Wins"
+	else:
+		return "Player Wins"
 
 
 def winners(player):
