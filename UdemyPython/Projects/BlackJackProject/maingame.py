@@ -19,6 +19,9 @@ while startGame:
     intro()
     cards,dex = start(dex,hand)
     botplayer = hits('bot',10,cards,dex)
+    dex = {'hearts':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'spades':[1,2,3,4,5,6,7,8,9,10,10,10,10,11],'diamonds': [1,2,3,4,5,6,7,8,9,10,10,10,10,11],'clubs':[1,2,3,4,5,6,7,8,9,10,10,10,10,11]}
+    hand = {"hearts":[],"spades":[],"diamonds":[],"clubs":[],"hidden":[]}
+    cards,dex = start(dex,hand)
     realplayer = hits('player',20,cards,dex)
     print(botplayer,cards)
     print(realplayer,cards)
