@@ -76,6 +76,10 @@ while game_on:
 
     round_num += 1
 
+    if round_num > 500:
+        game_on = False
+        break 
+
     print(f"Round {round_num}")
 
     if len(player_one.all_cards) == 0:
