@@ -3,8 +3,6 @@ from colorama import init
 from colorama import Fore
 init()
 #! this is the py that will pick cards from the dex at the start and mid game.
-
-
 def start(dex,cards):
     s = random.randint(0,3)
     if s == 0:
@@ -39,6 +37,6 @@ def pickcard(dex):
     try:
         thecard = dex[suit][number]
         del dex[suit][number]
-        return thecard, dex
+        return suit ,thecard, dex
     except:
         print(Fore.RED + "Whoops Somthing went wront while picking cards")

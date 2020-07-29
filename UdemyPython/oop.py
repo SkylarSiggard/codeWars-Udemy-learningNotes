@@ -91,7 +91,7 @@ class AnimalNew():
 class PolyDogNew(AnimalNew):
     def speak(self):
         return self.name + " says woof !!!"
-    
+# *******************************************************************************************************
 #* *********************************************************************************************************************
 #! Special Methods (magic/Dunder)
 class Book():
@@ -114,6 +114,7 @@ b = Book("Python","Jose",200)
 #! this wouldnt normal work without having the magic methonds in that Book class
 print(b)
 len(b)
+
 
 #! will delete the book or item from memory 
 del b 
