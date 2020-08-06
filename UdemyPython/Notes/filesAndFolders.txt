@@ -1,0 +1,35 @@
+To make a text file in jupyter we do this 
+f = open('practice.txt','w+')
+f.write('This is a test String')
+f.close() 
+
+To get the pwd working directory we can just pwd however you cant use that in other py scripts. In order to get the pwd we can use 
+
+Import os 
+
+Os.getcwd() and that will allow us to get the working directory 
+
+os.listdir()  will give you a list of all files in your location. 
+
+os.listdir("C:\\Users")  you can also add arguments 
+
+
+import shutil 
+
+shutil.move('practice.txt','C:\\Users\\Skylar\\Desktop\\udemy\\practice.txt')
+
+import send2trash
+
+shutil.move('C:\\Users\\Skylar\\Desktop\\udemy\\practice.txt',os.getcwd())
+
+send2trash.send2trash('practice.txt')
+
+files = 'C:\\Users\\Skylar\\Desktop\\udemy\\Complete-Python-3-Bootcamp-master\\13-Advanced Python Modules\\practice.txt'
+for folders, sub_folders, files in os.walk(files):
+    print(f"Currently looking at {folder}")
+    
+    for sub_fold in sub_folders:
+        print(sub_fold)
+    
+    for f in files:
+        print(f)
