@@ -33,3 +33,14 @@ for folders, sub_folders, files in os.walk(files):
     
     for f in files:
         print(f)
+
+
+you can import datetime 
+
+date1 = date(2020,11,3)
+date2 = date(2021,11,3)
+
+result = date1 - date2 
+
+result.days 
+
