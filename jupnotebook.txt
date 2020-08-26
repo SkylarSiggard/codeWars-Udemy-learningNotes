@@ -1,0 +1,3 @@
+Ctrl + shift + p
+
+type Create New, then i should be one of the first options. 
