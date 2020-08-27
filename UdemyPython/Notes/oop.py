@@ -1,8 +1,10 @@
 oop = "Object Oriented Programming"
 #!  class NameOfClass():
+
 #!     def__init__(self,param1,param2):
 #!       self.param1 = param1
 #!       self.param2 = param2
+
 #!     def some_method(self):
 #*        preform some action 
 #!        print(self.param1)
