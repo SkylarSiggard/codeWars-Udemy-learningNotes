@@ -40,13 +40,14 @@ def friends(name):
     affinityScores = similarities[name]
     return affinityScores
 
-# will sort the top 3 and return them as a tuple. 
+# will sort the top 3 and return them as a tuple. This was practice and learning function 
 def sortme(s):
     allcommons = {}
     for i in s:
         x = sorted(similarities[i].items(), key=operator.itemgetter(1), reverse=True)
         allcommons[i] = x[0] , x[1] , x[2]
     return allcommons
+
 # if you wanted an imput a name to check common likers 
 def findmecommon(s):
     readers = []
@@ -54,7 +55,7 @@ def findmecommon(s):
     for i in s:
         readers.append(i)
     while choice not in readers:
-        choice = input("Please input a name of a reader  ").lower()
+        choice = input("\n\nPlease input a name of a reader  ").lower()
         if choice not in readers:
             print("Sorry, but I cant find that reader. Try again! ")
     x = sorted(similarities[choice].items(), key=operator.itemgetter(1), reverse=True)
@@ -90,27 +91,38 @@ def recommendfinder(person):
         else:
             index = 1 + index
     for i in reader2:
-        if i not in reader1:
+        if i not in reader1 and i not in readthese:
             readthese.append(i)
         else:
             pass 
     return readthese
+# time to make the last names by abc 
+def abcme(thebookslist):
+    abdone = []
+    for i in thebookslist:
+        for j in i[0][::-1]:
+            if j == j.upper() and j != ' ':
+                abdone.append(( j, i))
+                break 
+    return abdone
 
 
 # run main 
 def main():
     compute_scores()
     
-    #! uncomment these to test it out
-    #* First method of doing it  
     searchcommones = findmecommon(similarities)
     thebooks = recommendfinder(searchcommones)
-    print(searchcommones)
-    print(thebooks)
+    donewithbooks = abcme(thebooks)
+    alf = [searchcommones[1][0],searchcommones[2][0]]
+    alf.sort()
+    donewithbooks.sort()
     
-    #* Second method of doing it. if you wanted to get a huge list of everyones common reading types 
-    #commons = sortme(similarities)
-    #print(commons)
+    
+    print("\nRecommendations for "+searchcommones[0]+" from "+alf[0]+' and '+alf[1]+':')
+    for i in donewithbooks:
+        print('\t {}, {}'.format(i[1][0], i[1][1]))
+    
     pass
 
 if __name__ == "__main__":
